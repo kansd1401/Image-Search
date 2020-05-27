@@ -1,12 +1,19 @@
 import React from 'react';
 
-export default function ImageListItem({images}) {
+export default function ImageListItem({image}) {
 
-  const [query,setQuery] = useState("")
+  const download = () => {
+
+  }
 
   return (
     <div>
-      {images.map((image,key) => <img src={image.urls.regular} key={key}/>)}
+      <img src={image.urls.regular}/>
+      <div>
+        <a href={image.links.download}>
+          Download
+        </a>
+      </div>
     </div>
   );
 }
