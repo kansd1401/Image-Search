@@ -51,7 +51,7 @@ function App() {
       <NavBar onClick={onSearch}/>
       <div className="content">
         {loading && <Spinner animation="border" />}
-        {images && <ImageList images={images} />}
+        {images && <ImageList images={images} accessKey={accessKey} />}
         {!loading && images && images.length === 0 && <h1>No Results...</h1>}
       </div>
       <PageList page={page} pageLength={pageLength} prevPage={() => setPage(page - 1)} nextPage={() => setPage(page + 1)}/>

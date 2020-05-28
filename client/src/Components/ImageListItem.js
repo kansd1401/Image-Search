@@ -1,14 +1,9 @@
 import React from 'react';
 import {Button} from 'react-bootstrap'
 import {MdFileDownload} from 'react-icons/md'
-import axios from 'axios'
-import './ImageList.scss'
 
-export default function ImageListItem({image}) {
 
-  const onClick = () => {
-
-  }
+export default function ImageListItem({image, onDownload}) {
 
   return (
     <div className="item">
@@ -18,7 +13,7 @@ export default function ImageListItem({image}) {
           <img src={image.user.profile_image.medium}/>
           <h2>{image.user.name}</h2>
         </div>
-        <Button variant="outline-dark">
+        <Button variant="outline-dark" onClick={onDownload}>
           <MdFileDownload size={38}/>
         </Button>
       </div>
