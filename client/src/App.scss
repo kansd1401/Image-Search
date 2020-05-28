@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+html, body, #app, #app>div, #root {
+  height: 100%
+}
+
+.App{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content{
+  min-height: 80%;
+}

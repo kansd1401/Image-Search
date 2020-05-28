@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.navBar{
+  display: flex;
+  flex-direction: row;
+  height: 4.5rem;
+  padding: 1rem;
+  background-color: $black;
+  // justify-content: center;
+  &--search{
+    width: 40rem;
+  }
+  h1{
+    font-family: "Yesteryear";
+    color: $grey;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}

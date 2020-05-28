@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
-import './App.css';
-import SearchBar from './Components/SearchBar'
+import './App.scss';
+import NavBar from './Components/NavBar'
 import ImageList from './Components/ImageList'
 import PageList from './Components/PageList'
 import axios from 'axios';
@@ -33,9 +33,9 @@ function App() {
             setPageLength(res.data.total_pages)
             setLoading(false)
           })
-          .catch((err) => {
+          .catch(() => {
             setLoading(false)
-            console.log(err)
+            console.log("Rate Limit Exceeded")
           })
     }
     setQuery(keyword)
@@ -48,10 +48,13 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar onClick={onSearch}/>
-      <PageList page={page} pageLength={pageLength} prevPage={() => setPage(page-1)} nextPage={() => setPage(page+1)}/>
-      {loading && <Spinner animation="border" />}
-      {images && <ImageList images={images}/>}
+      <NavBar onClick={onSearch}/>
+      <div className="content">
+        {loading && <Spinner animation="border" />}
+        {images && <ImageList images={images} />}
+        {!loading && images && images.length === 0 && <h1>No Results...</h1>}
+      </div>
+      <PageList page={page} pageLength={pageLength} prevPage={() => setPage(page - 1)} nextPage={() => setPage(page + 1)}/>
     </div>
   );
 }
