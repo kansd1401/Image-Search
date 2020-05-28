@@ -14,8 +14,7 @@ export default function NavBar({onClick}) {
       <div className="navBar--search">
         <InputGroup className="mb-3">
           <FormControl
-            placeholder="Recipient's username"
-            aria-label="Recipient's username"
+            aria-label="Search"
             aria-describedby="basic-addon2"
             placeholder="Search" onChange={event => setQuery(event.target.value)}
           />

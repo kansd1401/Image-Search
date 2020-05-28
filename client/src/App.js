@@ -28,7 +28,6 @@ function App() {
               }
           })
           .then((res) => {
-            console.log(res)
             setImages(res.data.results)
             setPageLength(res.data.total_pages)
             setLoading(false)
@@ -44,14 +43,14 @@ function App() {
   //Only makes the api call when page changes
   useEffect( () => {
     onSearch(query)
-  }, [page])
+  }, [page])  
 
   return (
     <div className="App">
       <NavBar onClick={onSearch}/>
       <div className="content">
         {loading && <Spinner animation="border" />}
-        {images && <ImageList images={images} accessKey={accessKey} />}
+        {images && <ImageList images={images} />}
         {!loading && images && images.length === 0 && <h1>No Results...</h1>}
       </div>
       <PageList page={page} pageLength={pageLength} prevPage={() => setPage(page - 1)} nextPage={() => setPage(page + 1)}/>

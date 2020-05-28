@@ -6,7 +6,7 @@ import './ImageList.scss'
 
 
 
-export default function ImageList({images, accessKey}) {
+export default function ImageList({images}) {
   const [view,setView] = useState("list")
   const buttonClass = classNames({
     "list": view === "list",

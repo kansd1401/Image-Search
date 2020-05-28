@@ -7,10 +7,10 @@ export default function ImageListItem({image, onDownload}) {
 
   return (
     <div className="item">
-      <img className="item__image" src={image.urls.regular}/>
+      <img className="item__image" src={image.urls.regular} alt={image.id}/>
       <div className="item__info">
         <div className="item__info--owner">
-          <img src={image.user.profile_image.medium}/>
+          <img src={image.user.profile_image.medium}alt={image.user.name}/>
           <h2>{image.user.name}</h2>
         </div>
         <Button variant="outline-dark" onClick={onDownload}>
