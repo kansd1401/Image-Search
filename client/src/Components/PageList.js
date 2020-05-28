@@ -1,14 +1,13 @@
 import React,{useState, useEffect} from 'react';
-import PageListItem from './PageListItem'
 import {GrCaretNext, GrCaretPrevious} from 'react-icons/gr'
 import { Button } from 'react-bootstrap';
 // import './App.css';
 
 //Determines if the there is an option to view the next page of Images otherwise Disables the button
-function PageButton({active, previous}){
+function PageButton({active, previous, onClick}){
   if (active){
     return (
-      <Button variant="primary">
+      <Button variant="primary" onClick={onClick} >
         {previous ? <GrCaretPrevious/>: <GrCaretNext/>}
       </Button>
     )
@@ -23,13 +22,14 @@ function PageButton({active, previous}){
 }
 
 
-export default function ImageList({page, pageLength}) {
+export default function PageList({page, pageLength, prevPage, nextPage}) {
 
   return (
-    <div> {/* if page > 1 that means previous button needs to be active and if the current page is less than the total pages next button should be active*/}
-      <PageButton active={page > 1} previous={true}/>
+    <div> {/* if page > 1 that means previous button needs to be active and if the current page is less than the total pages next button should be active
+    Max number of pages is locked to 3 due to demo user restrictions*/}
+      <PageButton onClick={prevPage} active={page > 1} previous={true}/>
       <div>{page}</div>
-      <PageButton active={page < pageLength} previous={false}/>
+      <PageButton onClick={nextPage} active={page < pageLength} previous={false}/>
     </div>
   );
 }
