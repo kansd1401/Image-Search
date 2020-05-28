@@ -20,7 +20,7 @@ export default function NavBar({onClick}) {
             placeholder="Search" onChange={event => setQuery(event.target.value)}
           />
           <InputGroup.Append>
-            <Button onClick={() => onClick(query)} variant="outline-secondary"><FaSearch/></Button>
+            <Button onClick={() => onClick(query)} variant="primary"><FaSearch/></Button>
           </InputGroup.Append>
         </InputGroup>
       </div>

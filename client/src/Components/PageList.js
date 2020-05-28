@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import {GrCaretNext, GrCaretPrevious} from 'react-icons/gr'
 import { Button } from 'react-bootstrap';
 import './PageList.scss';
@@ -27,7 +27,7 @@ export default function PageList({page, pageLength, prevPage, nextPage}) {
   return (
     <div className="pagebar"> {/* if page > 1 that means previous button needs to be active and if the current page is less than the total pages next button should be active*/}
       <PageButton onClick={prevPage} active={page > 1} previous={true}/>
-      <div>{page}</div>
+      <h1>{page}</h1>
       <PageButton onClick={nextPage} active={page < pageLength} previous={false}/>
     </div>
   );

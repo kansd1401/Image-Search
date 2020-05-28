@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import ImageListItem from './ImageListItem'
 import classNames from 'classnames'
-// import './App.css';
+import './ImageList.scss'
 
 
 export default function ImageList({images}) {
@@ -12,10 +12,8 @@ export default function ImageList({images}) {
   // });
 
   return (
-    <div> 
-      <div>
-       {images.map((image,key) => <ImageListItem image={image} key={key}/>)}
-      </div>
+    <div className="list">
+      {images.map((image,key) => <ImageListItem image={image} key={key}/>)}
     </div>
   );
 }

@@ -5,15 +5,15 @@
   flex-direction: row;
   height: 4.5rem;
   padding: 1rem;
-  background-color: $grey;
+  background-color: $black;
   justify-content: center;
   &--search{
     width: 40rem;
   }
   h1{
-    font-family: "Yesteryear";
+    font-family: "Roboto";
     color: $grey;
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 }
