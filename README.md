@@ -15,6 +15,8 @@ After cloning go inside the project folder then `cd client`
 
 Install dependencies with `npm install`.
 
+Use the .envexample file to make .env and get your own api keys from Unsplash to add to the .env before you run the ap.
+
 ## Running Webpack Development Server
 
 ```sh
